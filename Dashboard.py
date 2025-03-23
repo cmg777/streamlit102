@@ -18,6 +18,9 @@ if fl is not None:
 else:
     os.chdir(r"C:\Users\AEPAC\Desktop\Streamlit")
     df = pd.read_csv("Superstore.csv", encoding = "ISO-8859-1")
+else:
+    # Use a relative path or a URL for the default dataset
+    df = pd.read_csv("Superstore.csv", encoding = "ISO-8859-1")
 
 col1, col2 = st.columns((2))
 df["Order Date"] = pd.to_datetime(df["Order Date"])
